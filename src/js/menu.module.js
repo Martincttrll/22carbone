@@ -1,7 +1,7 @@
 import { transitionLoader } from "./loader.module";
-const burger = document.querySelectorAll(".menu-button")[0];
-const menuPanels = document.querySelectorAll(".menu-panel");
-const menuButton = document.querySelectorAll(".menu-button div");
+import { loaderBlack, loaderWhite, burger, menuPanels} from "./const.module";
+import { setCurrentPage, getCurrentPage } from "./pageHandler.module";
+
 export function initMenuClickHandler() {
   burger.addEventListener("click", () => {
     menuPanels.forEach((menu) => {
@@ -14,10 +14,14 @@ export function initMenuClickHandler() {
   });
   menuPanels[0].addEventListener("click", () => {
     transitionLoader(loaderBlack);
-    currentPage = "project";
+    setCurrentPage("projet");
+    console.log(getCurrentPage());
+
   });
   menuPanels[1].addEventListener("click", () => {
     transitionLoader(loaderWhite);
-    currentPage = "contact";
+    setCurrentPage("contact");
+    console.log(getCurrentPage());
+
   });
 }

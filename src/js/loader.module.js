@@ -1,5 +1,5 @@
-const loaderBlack = document.querySelectorAll(".loader-black")[0];
-const loaderWhite = document.querySelectorAll(".loader-white")[0];
+
+import { loaderBlack, loaderWhite, menuPanels } from "./const.module";
 export const onLoad = () => {
   window.addEventListener("load", () => {
     loaderBlack.style.transform = `translateX(-100%)`;
