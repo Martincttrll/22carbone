@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600&display=swap");
+:root {
+  --black: black;
+  --white: white;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Wix Madefor Display", sans-serif;
+}
+body {
+  position: relative;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+iframe {
+  position: absolute;
+  bottom: -250px;
+  transition: bottom 0.5s ease-in-out;
+}
+iframe:hover {
+  bottom: 0;
+}
+/* MENU BURGER */
+.menu-button {
+  position: absolute;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+.menu-button div {
+  height: 2px;
+  width: 30px;
+  background-color: var(--black);
+  margin-bottom: 3px;
+}
+
+.menu-container {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  z-index: 1;
+}
+.menu-panel {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 0;
+  text-transform: uppercase;
+  transition: height 0.5s cubic-bezier(0.6, 0, 0.24, 1);
+}
+.menu-panel.left {
+  background-color: var(--white);
+  color: var(--black);
+  mix-blend-mode: multiply;
+  height: 0vh;
+}
+.menu-panel.right {
+  background-color: var(--black);
+  color: var(--white);
+  transition-delay: 0.1s;
+  height: 0vh;
+}
+.displayed {
+  height: 100vh !important;
+}
+
+[class^="loader"] {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.loader-white {
+  transform: translateX(0);
+  background-color: var(--white);
+}
+.loader-black {
+  transform: translateX(0%);
+  background-color: var(--black);
+}
+
+/* PROJETS */
+.hr {
+  background-color: black;
+  width: 100%;
+  height: 2px;
+}
+
+.cursor-selector {
+  width: 100%;
+  height: 141px;
+  background-color: black;
+  position: absolute;
+}
+#project-container {
+  counter-reset: projet;
+  position: relative;
+}
+.project {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 10px 60px;
+  gap: 70px;
+  position: relative;
+}
+.project:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.project .project-title {
+  font-size: 6em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.project-title::before {
+  counter-increment: projet;
+  content: "." counter(projet, decimal-leading-zero);
+  font-size: 0.3em;
+  position: absolute;
+  top: 28px;
+  left: 15px;
+}
+.project .project-feat {
+  font-size: 4em;
+}
