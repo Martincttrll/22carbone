@@ -1,17 +1,20 @@
 [
-    {
-      "name": "Distortion",
-      "feat": "",
-      "img": "Fl5z_w5WAAAO_Aj.jpeg"
-    },
-    {
-      "name": "In Your Phase",
-      "feat": "Laurent Garnier",
-      "img": "FqJpV4oXwAAqck0.jpeg"
-    },
-    {
-      "name": "Comming Soon",
-      "feat": "XXXXX",
-      "img": "FtXwEU1X0AAX6L7.jpeg"
-    }
-  ]
+  {
+    "name": "Distortion",
+    "feat": "",
+    "img": "Fl5z_w5WAAAO_Aj.jpeg",
+    "link": "album/3dxLjZJm2dfIkWqHyzskDC?utm_source=generator"
+  },
+  {
+    "name": "In Your Phase",
+    "feat": "Laurent Garnier",
+    "img": "FqJpV4oXwAAqck0.jpeg",
+    "link": "track/0sPjC0cwwvSHYU2p94LcIw?utm_source=generator&theme=0"
+  },
+  {
+    "name": "Comming Soon",
+    "feat": "XXXXX",
+    "img": "FtXwEU1X0AAX6L7.jpeg",
+    "link": ""
+  }
+]

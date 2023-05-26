@@ -1,6 +1,5 @@
 import { transitionLoader } from "./loader.module";
-import { loaderBlack, loaderWhite, burger, menuPanels} from "./const.module";
-import { setCurrentPage, getCurrentPage } from "./pageHandler.module";
+import { loaderBlack, loaderWhite, burger, menuPanels } from "./const.module";
 
 export function initMenuClickHandler() {
   burger.addEventListener("click", () => {
@@ -14,14 +13,14 @@ export function initMenuClickHandler() {
   });
   menuPanels[0].addEventListener("click", () => {
     transitionLoader(loaderBlack);
-    setCurrentPage("projet");
-    console.log(getCurrentPage());
-
+    window.history.pushState("state", null, "/projets");
+    let popStateEvent = new PopStateEvent("popstate", { state: "state" });
+    dispatchEvent(popStateEvent);
   });
   menuPanels[1].addEventListener("click", () => {
     transitionLoader(loaderWhite);
-    setCurrentPage("contact");
-    console.log(getCurrentPage());
-
+    window.history.pushState("state", null, "/contact");
+    let popStateEvent = new PopStateEvent("popstate", { state: "state" });
+    dispatchEvent(popStateEvent);
   });
 }
