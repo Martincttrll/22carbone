@@ -5,7 +5,15 @@ import {
 } from "./const.module";
 
 export function initUpdatePage() {
+  window.addEventListener("load", () => {
+    updatePage();
+  });
+
   window.addEventListener("popstate", () => {
+    updatePage();
+  });
+
+  function updatePage() {
     if (window.location.pathname == "/projets") {
       projectContainer.style.display = "flex";
     } else {
@@ -19,9 +27,9 @@ export function initUpdatePage() {
     }
 
     if (window.location.pathname == "/") {
-      homeContainer.style.display = "/flex";
+      homeContainer.style.display = "flex";
     } else {
       homeContainer.style.display = "none";
     }
-  });
+  }
 }

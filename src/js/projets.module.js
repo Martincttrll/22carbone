@@ -6,21 +6,25 @@ export const initProjets = () => {
     const projectDiv = document.createElement("div");
     projectDiv.classList.add("project");
 
+    const projetTextDiv = document.createElement("div");
+    projetTextDiv.classList.add("project-text");
+    projectDiv.appendChild(projetTextDiv);
+
     const imgPara = document.createElement("img");
     imgPara.classList.add("project-img");
-    imgPara.setAttribute("src", "/public/img/" + projet.img);
+    imgPara.setAttribute("src", "/img/" + projet.img);
     document.body.appendChild(imgPara);
 
     const titlePara = document.createElement("p");
     titlePara.innerHTML = projet.name;
     titlePara.classList.add("project-title");
-    projectDiv.appendChild(titlePara);
+    projetTextDiv.appendChild(titlePara);
 
     if (projet.feat != "") {
       const featPara = document.createElement("p");
       featPara.innerHTML = "feat. " + projet.feat;
       featPara.classList.add("project-feat");
-      projectDiv.appendChild(featPara);
+      projetTextDiv.appendChild(featPara);
     }
     if (projet.link != "") {
       const iframe = document.createElement("iframe");
@@ -33,7 +37,7 @@ export const initProjets = () => {
         "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       );
       iframe.setAttribute("loading", "lazy");
-      document.body.appendChild(iframe);
+      projectDiv.appendChild(iframe);
     }
 
     const hrDiv = document.createElement("div");
@@ -42,7 +46,6 @@ export const initProjets = () => {
     projectContainer.appendChild(projectDiv);
     projectContainer.appendChild(hrDiv);
   });
-  ///IMG HOVER
 };
 
 export function imgHoverProjets() {
@@ -57,24 +60,29 @@ export function imgHoverProjets() {
     });
   });
 }
+
 export function iframeClickProjets() {
   const iframe = document.querySelectorAll("iframe");
   const projets = document.querySelectorAll(".project");
   projets.forEach((projet, index) => {
     projet.addEventListener("click", () => {
-      const computedStyle = window.getComputedStyle(iframe[index]);
-      const topValue = computedStyle.getPropertyValue("top");
+      const height = window
+        .getComputedStyle(iframe[index])
+        .getPropertyValue("height");
 
       for (let i = 0; i < iframe.length; i++) {
         if (i !== index) {
-          iframe[i].style.top = "-500px";
+          iframe[i].style.height = "0px";
+          iframe[i].style.marginTop = "0px";
         }
       }
 
-      if (topValue == "-500px") {
-        iframe[index].style.top = "0";
-      } else if (topValue == "0") {
-        iframe[index].style.top = "-500px";
+      if (height == "0px") {
+        iframe[index].style.height = "200px";
+        iframe[index].style.marginTop = "30px";
+      } else if (height == "200px") {
+        iframe[index].style.height = "0px";
+        iframe[index].style.marginTop = "0px";
       }
     });
   });
