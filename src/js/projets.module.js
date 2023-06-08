@@ -2,6 +2,7 @@ import projets from "/utils/projets.json";
 import { projectContainer } from "/src/js/const.module";
 
 export const initProjets = () => {
+  projectContainer.innerHTML = null;
   projets.forEach((projet) => {
     const projectDiv = document.createElement("div");
     projectDiv.classList.add("project");
