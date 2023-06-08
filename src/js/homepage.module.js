@@ -5,9 +5,8 @@ export default function initScroll() {
   const scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
+    smartphone: {
+      smooth: true
+  }
   });
-
-  const target = document.querySelector("#js-target");
-
-  scroll.scrollTo(target);
 }

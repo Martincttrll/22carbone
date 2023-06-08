@@ -24,6 +24,9 @@ body {
 .align-center {
   align-items: center;
 }
+.h100{
+  height: 100vh;
+}
 .fw-900 {
   font-size: 2.5vw;
   font-weight: 900;
@@ -32,11 +35,13 @@ body {
   position: relative;
   padding-left: 24px;
 }
-#noise {
-  position: absolute;
-  z-index: 4;
-  width: 100vw;
-  pointer-events: none;
+.artist-div{
+  margin: 80px 0px 0 20px;
+  height: 50vh ;
+}
+.artist-names{
+  text-transform: uppercase;
+  font-size: 6vw;
 }
 .bg-black {
   background-color: var(--black);
@@ -79,8 +84,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 33%;
   height: 0;
+  overflow-y: hidden;
   text-transform: uppercase;
   transition: height 0.5s cubic-bezier(0.6, 0, 0.24, 1);
 }
@@ -89,10 +95,15 @@ body {
   color: var(--black);
   height: 0vh;
 }
+.menu-panel.middle{
+  background-image: url("/img/fondmenu.jpeg");
+  color: white;
+  transition-delay: 0.1s;
+}
 .menu-panel.right {
   background-color: var(--black);
   color: var(--white);
-  transition-delay: 0.1s;
+  transition-delay: 0.2s;
   height: 0vh;
 }
 .displayed {

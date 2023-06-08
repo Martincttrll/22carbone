@@ -18,6 +18,12 @@ export function initMenuClickHandler() {
     dispatchEvent(popStateEvent);
   });
   menuPanels[1].addEventListener("click", () => {
+    transitionLoader(loaderBlack);
+    window.history.pushState("state", null, "/");
+    let popStateEvent = new PopStateEvent("popstate", { state: "state" });
+    dispatchEvent(popStateEvent);
+  });
+  menuPanels[2].addEventListener("click", () => {
     transitionLoader(loaderWhite);
     window.history.pushState("state", null, "/contact");
     let popStateEvent = new PopStateEvent("popstate", { state: "state" });
